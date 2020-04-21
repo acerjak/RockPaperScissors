@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let personScore = 0;
+        let computerScore = 0;
+        let ties = 0;
+
+        // User Choice
+        for (i = 0; i < 1; i++) {
+        var userChoice = prompt('Choose Rock, Paper, or Scissors')
+
+        // Computer Choice Random
+        let compOptions = ['Rock', 'Paper', 'Scissors']
+        let Rock = 'Rock'
+        let Paper = 'Paper'
+        let Scissors = 'Scissors'
+        
+        compRPS = Math.floor(Math.random() * 3);
+        compChoice = compOptions[Math.floor(Math.random() * 3)];
+        console.log(compChoice);
+
+        // Rock: wins against scissors, loses to paper, and ties against itself
+        if ( userChoice === Rock && compChoice === Scissors) {
+            console.log('Win')
+            alert('Win')
+                computerScore += 0;
+                personScore += 1;
+                ties += 0;
+        } else if ( userChoice === Rock && compChoice === Paper) {
+            console.log('Loss')
+            alert('Loss')
+                computerScore += 1;
+                personScore += 0;
+                ties += 0;
+        }
+        // Paper: wins against rock, loses to scissors, and ties against itself
+        if ( userChoice === Paper && compChoice === Rock) {
+            console.log('Win')
+            alert('Win')
+                computerScore += 0;
+                personScore += 1;
+                ties += 0;
+        } else if ( userChoice === Paper && compChoice === Scissors) {
+            console.log('Loss')
+            alert('Loss')
+                computerScore += 1;
+                personScore += 0;
+                ties += 0;
+        }
+        // Scissors: wins against paper, loses to rock, and ties against itself
+        if ( userChoice === Scissors && compChoice === Paper) {
+            console.log('Win')
+            alert('Win')
+                computerScore += 0;
+                personScore += 1;
+                ties += 0;
+        } else if ( userChoice === Scissors && compChoice === Rock) {
+            console.log('Loss')
+            alert('Loss')
+                computerScore += 1;
+                personScore += 0;
+                ties += 0;
+        }
+        // If user choice matches comp choice, tie
+
+        if ( userChoice === compChoice ) {
+            console.log('Tie')
+            alert('Tie')
+                computerScore += 1;
+                personScore += 1;
+                ties += 1;
+        }
+        // If user enters an invalid response other than Rock, Paper, or Scissors:
+        if (userChoice !== Rock && userChoice !== Paper && userChoice !== Scissors) {
+                alert('Invalid answer. Try again.')
+                --i;
+            }}
+        // Repeat 10 times and alert scores
+        alert (`
+            Person: ${personScore}
+            Computer: ${computerScore}`);
+
+    </script>
+</body>
+</html>
